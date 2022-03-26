@@ -105,11 +105,11 @@ def avoid_walls(my_body: dict, possible_moves: List[str], board_width: int, boar
     my_head = my_body[0]  # The first body coordinate is always the head
     if my_head["x"] <= 0 and "left" in possible_moves:
         possible_moves.remove("left")
-    elif my_head["x"] >= board_width -1 and "right" in possible_moves:
+    if my_head["x"] >= board_width -1 and "right" in possible_moves:
         possible_moves.remove("right")
-    elif my_head["y"] <= 0 and "down" in possible_moves:
+    if my_head["y"] <= 0 and "down" in possible_moves:
         possible_moves.remove("down")
-    elif my_head["y"] >= board_height-1 and "up" in possible_moves:
+    if my_head["y"] >= board_height-1 and "up" in possible_moves:
         possible_moves.remove("up")
 
     return possible_moves
