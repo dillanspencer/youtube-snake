@@ -108,10 +108,10 @@ def avoid_walls(my_body: dict, possible_moves: List[str], board_width: int, boar
         possible_moves.remove("left")
     elif my_neck["x"] == board_width - 1 and possible_moves["right"]:
         possible_moves.remove("right")
-    elif my_neck["y"] == 0 and possible_moves["up"]:
-        possible_moves.remove("up")
-    elif my_neck["y"] == board_height - 1 and possible_moves["down"]:
+    elif my_neck["y"] == 0 and possible_moves["down"]:
         possible_moves.remove("down")
+    elif my_neck["y"] == board_height - 1 and possible_moves["up"]:
+        possible_moves.remove("up")
 
     return possible_moves
 
