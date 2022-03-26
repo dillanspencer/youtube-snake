@@ -106,11 +106,11 @@ def avoid_walls(my_body: dict, possible_moves: List[str], board_width: int, boar
     my_neck = my_body[1]  # The segment of body right after the head is the 'neck'
     if my_neck["x"] == 0 and "left" in possible_moves:
         possible_moves.remove("left")
-    elif my_neck["x"] == board_width - 1 and "right" in possible_moves:
+    elif my_neck["x"] == board_width and "right" in possible_moves:
         possible_moves.remove("right")
     elif my_neck["y"] == 0 and "down" in possible_moves:
         possible_moves.remove("down")
-    elif my_neck["y"] == board_height - 1 and "up" in possible_moves:
+    elif my_neck["y"] == board_height and "up" in possible_moves:
         possible_moves.remove("up")
 
     return possible_moves
