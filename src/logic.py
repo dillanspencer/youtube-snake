@@ -102,6 +102,8 @@ def _avoid_my_neck(my_body: dict, possible_moves: List[str]) -> List[str]:
     return possible_moves
 
 def avoid_walls(my_body: dict, possible_moves: List[str], board_width: int, board_height: int) -> List[str]:
+    my_head = my_body[0]  # The first body coordinate is always the head
+    my_neck = my_body[1]  # The segment of body right after the head is the 'neck'
     if my_neck["x"] == 0:
         possible_moves.remove("left")
     elif my_neck["x"] == board_width - 1:
