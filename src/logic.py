@@ -54,9 +54,9 @@ def choose_move(data: dict) -> str:
 
     # TODO: Step 1 - Don't hit walls.
     # Use information from `data` and `my_head` to not move beyond the game board.
-    # board = data['board']
-    # board_height = ?
-    # board_width = ?
+    board = data['board']
+    board_height = 11
+    board_width = 11
 
     # TODO: Step 2 - Don't hit yourself.
     # Use information from `my_body` to avoid moves that would collide with yourself.
@@ -99,3 +99,14 @@ def _avoid_my_neck(my_body: dict, possible_moves: List[str]) -> List[str]:
         possible_moves.remove("up")
 
     return possible_moves
+
+    def avoid_walls(my_body: dict, possible_moves: List[str], board_width: int, board_height: int):
+        if my_neck["x"] == 0:
+            possible_moves.remove("left")
+        elif my_neck["x"] == board_width - 1:
+            possible_moves.remove("right")
+        elif my_neck["y"] == 0:
+            possible_moves.remove("up")
+        elif my_neck["y"] == board_height - 1:
+            possible_moves.remove("down")
+
