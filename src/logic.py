@@ -101,15 +101,15 @@ def _avoid_my_neck(my_body: dict, possible_moves: List[str]) -> List[str]:
 
     return possible_moves
 
-    def avoid_walls(my_body: dict, possible_moves: List[str], board_width: int, board_height: int) -> List[str]:
-        if my_neck["x"] == 0:
-            possible_moves.remove("left")
-        elif my_neck["x"] == board_width - 1:
-            possible_moves.remove("right")
-        elif my_neck["y"] == 0:
-            possible_moves.remove("up")
-        elif my_neck["y"] == board_height - 1:
-            possible_moves.remove("down")
+def avoid_walls(my_body: dict, possible_moves: List[str], board_width: int, board_height: int) -> List[str]:
+    if my_neck["x"] == 0:
+        possible_moves.remove("left")
+    elif my_neck["x"] == board_width - 1:
+        possible_moves.remove("right")
+    elif my_neck["y"] == 0:
+        possible_moves.remove("up")
+    elif my_neck["y"] == board_height - 1:
+        possible_moves.remove("down")
 
-        return possible_moves
+    return possible_moves
 
